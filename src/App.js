@@ -16,6 +16,11 @@ function App() {
           <button className='buttons__button'>Clear laps</button>
         </div>
       </div>
+      <div className='laps'>
+        <div className='lap'>lap</div>
+        <div className='lap'>lap</div>
+        <div className='lap'>lap</div>
+      </div>
     </div>
   );
 }

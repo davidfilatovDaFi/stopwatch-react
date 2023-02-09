@@ -66,8 +66,50 @@ img {
   vertical-align: top;
 }
 .App {
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
   height: 100vh;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
+  background-color: #292929;
+  
 }
+.stopwatch {
+  min-height: 200px;
+  min-width: 500px;
+  text-align: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+}
+.time {
+  background-color: #494949;
+  color: #b3b2b2;
+  font-size: 46px;
+  padding: 20px;
+  box-shadow: -4px 0px 10px #000000, 4px 0px 10px #000000;
+  border-radius: 5px;
+}
+.buttons {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+
+}
+.buttons__button {
+  background-color: #292929;
+  color: #b3b2b2;
+  font-size: 18px;
+  text-shadow: -2px 0px 5px #000000, 2px 0px 5px #000000;
+}
+.laps {
+  color: #b3b2b2;
+  margin-top: 50px;
+}
+.lap {
+  margin-bottom: 15px;
+  font-size: 16px;
+}
+
