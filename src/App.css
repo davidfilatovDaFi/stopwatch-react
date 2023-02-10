@@ -91,6 +91,9 @@ img {
   padding: 20px;
   box-shadow: -4px 0px 10px #000000, 4px 0px 10px #000000;
   border-radius: 5px;
+  border: 8px solid #292929;
+  text-shadow: -2px 0px 16px#b3b2b2, 2px 0px 16px#b3b2b2;
+
 }
 .buttons {
   width: 100%;
@@ -111,5 +114,9 @@ img {
 .lap {
   margin-bottom: 15px;
   font-size: 16px;
+}
+span {
+  display: inline-block;
+
 }
 
