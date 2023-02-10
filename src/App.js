@@ -4,6 +4,7 @@ import './App.css'
 function App() {
   const [time,setTime] = useState({ms:0,sec:0,min:0,hour:0})
   const [interv,setInterv] = useState()
+  const [laps,setLaps] = useState([])
   let ms = time.ms,
       sec = time.sec,
       min = time.min,
@@ -25,6 +26,19 @@ function App() {
     }
     return setTime({ms,sec,min,hour})
   }
+  const restart = () => {
+    clearInterval(interv)
+    setTime({ms:0,sec:0,min:0,hour:0})
+  }
+  const lapCounter = () => {
+    const newLap = {
+      lapms:time.ms,
+      lapsec:time.sec,
+      lapmin:time.min,
+      laphour:time.hour
+    }
+    setLaps([...laps,newLap])
+  }
 
   return (
     <div className="App">
@@ -41,15 +55,20 @@ function App() {
             setInterv(setInterval(start,10)) 
           }} className='buttons__button'>Start</button>
           <button onClick={() => clearInterval(interv)} className='buttons__button'>Stop</button>
-          <button className='buttons__button'>Reset</button>
-          <button className='buttons__button'>Lap</button>
-          <button className='buttons__button'>Clear laps</button>
+          <button onClick={restart} className='buttons__button'>Restart</button>
+          <button onClick={lapCounter} className='buttons__button'>Lap</button>
+          <button onClick={() => setLaps([])} className='buttons__button'>Clear laps</button>
         </div>
       </div>
       <div className='laps'>
-        <div className='lap'>lap</div>
-        <div className='lap'>lap</div>
-        <div className='lap'>lap</div>
+        {laps.map((lap,i) => 
+        <div key={i} className='lap'>
+          <span className='lap'>lap {i+1}</span>
+          <span>{lap.laphour > 9 ? lap.laphour : '0' + lap.laphour}:</span>
+          <span>{lap.lapmin > 9 ? lap.lapmin : '0' + lap.lapmin}:</span>
+          <span>{lap.lapsec > 9 ? lap.lapsec : '0' + lap.lapsec}.</span>
+          <span>{lap.lapms > 9 ? lap.lapms : '0' + lap.lapms}</span>
+        </div>)}
       </div>
     </div>
   );
