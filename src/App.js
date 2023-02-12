@@ -24,7 +24,7 @@ function App() {
       hour++
       min = 0
     }
-    return setTime({ms,sec,min,hour})
+    setTime({ms,sec,min,hour})
   }
   const restart = () => {
     clearInterval(interv)
@@ -50,10 +50,7 @@ function App() {
           <span>{time.ms > 9 ? time.ms : '0' + time.ms}</span>
         </div>
         <div className='buttons'>
-          <button onClick={() => {
-
-            setInterv(setInterval(start,10)) 
-          }} className='buttons__button'>Start</button>
+          <button onClick={() => setInterv(setInterval(start,10))} className='buttons__button'>Start</button>
           <button onClick={() => clearInterval(interv)} className='buttons__button'>Stop</button>
           <button onClick={restart} className='buttons__button'>Restart</button>
           <button onClick={lapCounter} className='buttons__button'>Lap</button>

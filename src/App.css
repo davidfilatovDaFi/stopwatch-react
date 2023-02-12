@@ -100,26 +100,56 @@ img {
   width: 100%;
   display: flex;
   justify-content: space-between;
-
 }
+@media (max-width:530px) {
+  .stopwatch {
+    min-width: 0px;
+  }
+  .buttons {
+    max-width: 400px;
+    justify-content: center;
+  }
+  .buttons__button {
+    margin: 0 10px;
+  }
+}
+
 .buttons__button {
   background-color: #292929;
   color: #b3b2b2;
   font-size: 18px;
   text-shadow: -2px 0px 5px #000000, 2px 0px 5px #000000;
 }
+
 .laps {
   color: #b3b2b2;
   min-height: 500px;
 }
 .lap {
-  margin-bottom: 15px;
+  margin: 0 15px 15px 0;
   font-size: 16px;
+}
+@media (max-width:345px) {
+  .stopwatch {
+    justify-content: center;
+    margin: 100px 0 15px 0;
+  }
+  .time {
+    padding: 10px;
+    font-size: 35px;
+    margin-bottom: 35px;
+  }
+  .buttons__button {
+    font-size: 14px;
+  }
+  .lap {
+    font-size: 14px;
+  }
 }
 span {
   display: inline-block;
 
 }
 .lap {
-  margin-right: 15px;
+
 }
